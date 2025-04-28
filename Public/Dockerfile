@@ -2,16 +2,18 @@ FROM node:22.14
 
 RUN apt-get update && apt-get install -y git
 
-WORKDIR /usr/src/app
+RUN apk add --no-cache git
+
+WORKDIR /app
 
 RUN git clone https://github.com/chris979712/photo-social-backend.git 
 
-COPY package*.json ./
+WORKDIR /app/backend/photo-social-backend
+RUN npm install
 
-COPY . .
-
+WORKDIR /app/cliente
 RUN npm install
 
 EXPOSE 12345
 
-CMD ["npm","start"]
+CMD ["npm", "start"]
