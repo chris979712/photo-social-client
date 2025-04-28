@@ -13,7 +13,7 @@ services:
   backend:
     image: photo-social-backend:1
     build:
-      context: ./photo-social-backend/app
+      context: ./Server/app
       dockerfile: Dockerfile
     container_name: backend
     ports:
