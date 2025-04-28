@@ -2,6 +2,22 @@ version: '3'
 
 services:
 
+  nginx:
+    image: nginx:latest
+    ports:
+      - "3030:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx.d/default.conf
+    depends_on:
+      - cliente
+
+  cliente:
+    build:
+      context: ./Public
+    container_name: cliente_backend
+    ports:
+      - "12345:12345"
+
   cloner:
     image: alpine/git
     volumes:
@@ -14,20 +30,7 @@ services:
     volumes:
       - backend_data:/data
     depends_on:
+      - cliente 
       - cloner
     ports:
       - "5000:5000"
-  nginx:
-    image: nginx:latest
-    ports:
-      - "3030:80"
-    volumes:
-      - ./nginx/default.conf:/etc/nginx.d/default.conf
-    depends_on:
-      - cliente
-  cliente:
-    build:
-      context: ./Public
-    container_name: cliente_backend
-    ports:
-      - "12345:12345"
