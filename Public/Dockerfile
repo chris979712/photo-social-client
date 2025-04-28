@@ -18,4 +18,6 @@ COPY . .
 
 RUN npm install
 
+EXPOSE 12345
+
 CMD ["npm","start"]
