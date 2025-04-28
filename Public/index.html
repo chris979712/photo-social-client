@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de fotos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestión de fotos</h1>
+    <form id="uploadForm">
+        <input type="text" id="userId" placeholder="ID del usuario Ej: 1234" required>
+        <input type="file" id="photo" required hidden>
+        <label for="photo" class="custom-file-upload">Seleccionar archivo</label>
+        <span id="file-name">Ningún archivo seleccionado</span>
+        <button type="submit">Subir fotos</button>
+    </form>
+    <h2>Tus fotos</h2>
+    <div id="gallery"></div>
+    <script src="script.js"></script>
+</body>
+</html>
