@@ -10,16 +10,16 @@ services:
       - ./nginx/default.conf:/etc/nginx.d/default.conf
     depends_on:
       - cliente
+  backend:
+    build:
+      context: ./photo-social-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - cliente
   cliente:
     build:
       context: .
     container_name: cliente_backend
     ports:
       - "12345:12345"
-    depends_on:
-      - backend
-  backend:
-    build:
-      context: ./photo-social-backend
-    ports:
-      - "5000:5000"
