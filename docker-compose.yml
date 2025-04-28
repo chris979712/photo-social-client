@@ -11,8 +11,10 @@ services:
     depends_on:
       - cliente
   backend:
+    image: photo-social-backend:1
     build:
-      context: ./Public
+      context: ./photo-social-backend/app
+    container_name: backend
     ports:
       - "5000:5000"
     depends_on:
@@ -20,6 +22,6 @@ services:
   cliente:
     build:
       context: ./Public
-    container_name: cliente_backend
+    container_name: cliente
     ports:
       - "12345:12345"
