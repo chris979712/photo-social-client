@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "husky": "^9.1.7",
+    "mongoose": "^8.12.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "photo-social-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --runInBand",
+    "start": "cd src && nodemon server.js",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris979712/photo-social-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris979712/photo-social-backend/issues"
+  },
+  "homepage": "https://github.com/chris979712/photo-social-backend#readme",
+  "description": "",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
