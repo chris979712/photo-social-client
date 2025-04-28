@@ -34,3 +34,6 @@ services:
       - cloner
     ports:
       - "5000:5000"
+
+volumes:
+  backend_data:
