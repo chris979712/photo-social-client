@@ -12,7 +12,7 @@ services:
       - cliente
   backend:
     build:
-      context: ./photo-social-backend
+      context: ./Public/photo-social-backend
     ports:
       - "5000:5000"
     depends_on:
