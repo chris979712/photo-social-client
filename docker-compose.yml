@@ -14,6 +14,7 @@ services:
     image: photo-social-backend:1
     build:
       context: ./photo-social-backend/app
+      dockerfile: Dockerfile
     container_name: backend
     ports:
       - "5000:5000"
