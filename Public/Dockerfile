@@ -2,8 +2,6 @@ FROM node:22.14
 
 RUN apt-get update && apt-get install -y git
 
-RUN apk add --no-cache git
-
 WORKDIR /app
 
 RUN git clone https://github.com/chris979712/photo-social-backend.git 
