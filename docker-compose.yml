@@ -19,7 +19,7 @@ services:
       - cliente
   cliente:
     build:
-      context: .
+      context: ./Public
     container_name: cliente_backend
     ports:
       - "12345:12345"
