@@ -10,30 +10,16 @@ services:
       - ./nginx/default.conf:/etc/nginx.d/default.conf
     depends_on:
       - cliente
-
+  backend:
+    build:
+      context: ./Public
+    ports:
+      - "5000:5000"
+    depends_on:
+      - cliente
   cliente:
     build:
       context: ./Public
     container_name: cliente_backend
     ports:
       - "12345:12345"
-
-  cloner:
-    image: alpine/git
-    volumes:
-      - backend_data:/data
-    command: clone https://github.com/chris979712/photo-social-backend.git /data
-
-  backend:
-    build:
-      context: /data  
-    volumes:
-      - backend_data:/data
-    depends_on:
-      - cliente 
-      - cloner
-    ports:
-      - "5000:5000"
-
-volumes:
-  backend_data:
