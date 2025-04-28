@@ -10,6 +10,11 @@ WORKDIR /app/backend/photo-social-backend/app
 RUN npm install
 
 WORKDIR /app/cliente
+
+COPY package*.json ./
+
+COPY . .
+
 RUN npm install
 
 EXPOSE 12345
