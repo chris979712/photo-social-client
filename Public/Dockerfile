@@ -12,4 +12,4 @@ RUN git clone https://github.com/chris979712/photo-social-backend.git
 
 RUN npm install
 
-CMD ["npm","start"]
+CMD ["dir"]
