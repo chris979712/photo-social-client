@@ -6,7 +6,7 @@ WORKDIR /app
 
 RUN git clone https://github.com/chris979712/photo-social-backend.git 
 
-WORKDIR /app/backend/photo-social-backend
+WORKDIR /app/backend/photo-social-backend/app
 RUN npm install
 
 WORKDIR /app/cliente
